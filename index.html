@@ -73,11 +73,19 @@
     </p>
   </main>
 
- <script>
-  const appUrl =
-    "https://script.google.com/macros/s/AKfycbzw0Tqd_R9nrDq60rP2DSwefZncN_XerZedLZqj1NK37NhVypDsy7ZYpRc6gslf5JOR/exec";
+  <script>
+    const appUrl =
+      "https://script.google.com/macros/s/AKfycbzw0Tqd_R9nrDq60rP2DSwefZncN_XerZedLZqj1NK37NhVypDsy7ZYpRc6gslf5JOR/exec";
 
-  document.getElementById("open").href = appUrl;
-</script>
+    document.getElementById("open").href = appUrl;
+
+    const fromHome =
+      window.navigator.standalone === true ||
+      window.matchMedia("(display-mode: standalone)").matches;
+
+    if (fromHome) {
+      window.location.replace(appUrl);
+    }
+  </script>
 </body>
 </html>
