@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スタッフ実績</title>
+
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="./staff-ranking-icon-180x180.png">
+  <link rel="icon" type="image/png"
+        href="./staff-ranking-icon-180x180.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="スタッフ実績">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#08152f">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 32px 24px;
+      background: radial-gradient(ellipse at top, #203759, #08152f 70%);
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      text-align: center;
+    }
+    main { width: 100%; max-width: 380px; }
+    img {
+      width: 144px;
+      height: 144px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px #0006;
+    }
+    .label {
+      margin-top: 30px;
+      color: #d6b774;
+      font-size: 12px;
+      letter-spacing: 4px;
+    }
+    h1 { margin: 14px 0 32px; font-size: 25px; }
+    a {
+      display: block;
+      padding: 18px;
+      border-radius: 14px;
+      background: linear-gradient(120deg, #ead39c, #bd944a);
+      color: #08152f;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    p {
+      margin-top: 26px;
+      color: #b9c5d6;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="./staff-ranking-icon-180x180.png" alt="スタッフ実績">
+    <div class="label">STAFF RANKING</div>
+    <h1>スタッフ実績ランキング</h1>
+    <a id="open">アプリを開く →</a>
+    <p>
+      iPhoneでは、Safariの共有メニューから<br>
+      「ホーム画面に追加」を選んでください。
+    </p>
+  </main>
+
+  <script>
+    const appUrl =
+      "https://script.google.com/macros/s/AKfycbzw0Tqd_R9nrDq60rP2DSwefZncN_XerZedLZqj1NK37NhVypDsy7ZYpRc6gslf5JOR/exec";
+
+    document.getElementById("open").href = appUrl;
+
+    const fromHome =
+      window.navigator.standalone === true ||
+      window.matchMedia("(display-mode: standalone)").matches;
+
+    if (fromHome) {
+      window.location.replace(appUrl);
+    }
+  </script>
+</body>
+</html>
