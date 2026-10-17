@@ -78,21 +78,6 @@
     "https://script.google.com/macros/s/AKfycbzw0Tqd_R9nrDq60rP2DSwefZncN_XerZedLZqj1NK37NhVypDsy7ZYpRc6gslf5JOR/exec";
 
   document.getElementById("open").href = appUrl;
-
-  const params = new URLSearchParams(location.search);
-  const fromHome =
-    navigator.standalone === true ||
-    matchMedia("(display-mode: standalone)").matches;
-
-  if (fromHome || !params.has("install")) {
-    window.location.replace(appUrl);
-  } else {
-    params.delete("install");
-    const query = params.toString();
-    history.replaceState(
-      null, "", location.pathname + (query ? "?" + query : "")
-    );
-  }
 </script>
 </body>
 </html>
